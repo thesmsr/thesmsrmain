@@ -13,7 +13,7 @@ a{color:inherit}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;gap:20px;height:68px}
 .logo{font:700 1.2rem "Bricolage Grotesque",sans-serif;text-decoration:none;display:flex;align-items:center;gap:10px;margin-right:auto;height:64px}
-.logo img{display:block;width:90px;height:64px;object-fit:contain}
+.logo img{display:block;width:auto;max-width:90px;height:64px;object-fit:contain}
 nav{display:flex;gap:clamp(4px,0.55vw,8px);align-items:center}
 .nav-pill{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:7px clamp(11px,0.95vw,16px);border-radius:9999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:600;font-size:clamp(0.82rem,0.88vw,0.92rem);letter-spacing:-.01em;text-decoration:none;white-space:nowrap;overflow:hidden;isolation:isolate;cursor:pointer;transition:color .32s cubic-bezier(.2,.8,.2,1),border-color .32s ease,box-shadow .32s ease,transform .18s ease}
 .nav-pill span{position:relative;z-index:1;transition:color .32s cubic-bezier(.2,.8,.2,1)}
