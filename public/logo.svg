@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 430" role="img" aria-labelledby="title desc">
+  <title id="title">The Society of Mathematical Sciences and Research</title>
+  <desc id="desc">Circular navy seal with laurel branches, a fountain pen and a banner.</desc>
+  <defs>
+    <path id="sealText" d="M 94 214 A 162 162 0 0 1 418 214" />
+  </defs>
+  <circle cx="256" cy="204" r="174" fill="#fff" stroke="#091253" stroke-width="10"/>
+  <circle cx="256" cy="204" r="146" fill="#fff" stroke="#091253" stroke-width="7"/>
+  <text fill="#091253" font-family="Georgia, serif" font-size="22" letter-spacing="3"><textPath href="#sealText" startOffset="50%" text-anchor="middle">THE SOCIETY OF MATHEMATICAL SCIENCES AND RESEARCH</textPath></text>
+  <g fill="none" stroke="#091253" stroke-width="7" stroke-linecap="round">
+    <path d="M232 312 C178 291 153 246 159 177"/>
+    <path d="M280 312 C334 291 359 246 353 177"/>
+  </g>
+  <g fill="#091253">
+    <path d="M183 268c-20-3-31-15-35-29 18 0 31 9 35 29Zm-16-32c-19-7-27-21-26-35 17 4 28 16 26 35Zm-7-35c-16-10-21-25-17-38 15 7 23 21 17 38Zm1-37c-12-14-12-29-5-40 12 10 15 26 5 40Zm12-35c-8-17-3-31 7-40 9 13 7 28-7 40Zm18-30c-3-18 6-30 18-36 5 15-2 29-18 36ZM329 268c20-3 31-15 35-29-18 0-31 9-35 29Zm16-32c19-7 27-21 26-35-17 4-28 16-26 35Zm7-35c16-10 21-25 17-38-15 7-23 21-17 38Zm-1-37c12-14 12-29 5-40-12 10-15 26-5 40Zm-12-35c8-17 3-31-7-40-9 13-7 28 7 40Zm-18-30c3-18-6-30-18-36-5 15 2 29 18 36Z"/>
+  </g>
+  <g fill="#091253" stroke="#fff" stroke-width="3" stroke-linejoin="round">
+    <path d="M256 112 279 166 266 216 246 216 233 166Z"/>
+    <path d="M246 216h20l10 28h-40Z"/>
+    <path d="M256 112v119" fill="none" stroke="#fff" stroke-width="2"/>
+  </g>
+  <circle cx="256" cy="199" r="5" fill="#fff"/>
+  <text x="256" y="268" text-anchor="middle" fill="#091253" font-family="Georgia, serif" font-size="18" font-weight="700">THE SMSR</text>
+  <path d="M86 306 C142 289 370 289 426 306 L473 326 426 346 C370 363 142 363 86 346 L39 326Z" fill="#091253"/>
+  <path d="M86 306 39 326 86 346 104 329Z" fill="#091253"/>
+  <text x="256" y="335" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-size="20" font-style="italic">at the service of science</text>
+</svg>
