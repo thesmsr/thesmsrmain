@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import LocalPage, { AdditionalSections } from "./components/LocalPage";
 import AdminPage from "./components/AdminPage";
 import { loadCms } from "./lib/cms";
-import { supabase } from "./lib/supabase";
+import { supabase, isSuperAdminEmail } from "./lib/supabase";
 
 const h = React.createElement;
 const AUTH_TARGET_KEY = "smsr_auth_target";
@@ -94,7 +94,7 @@ export default function App() {
       if (!data?.session) return;
       setSession(data.session);
       const email = data.session.user?.email?.toLowerCase();
-      const defaultTarget = email === "mdsharifmolla354@gmail.com" ? "admin" : "dashboard";
+      const defaultTarget = isSuperAdminEmail(email) ? "admin" : "dashboard";
       const target = getAuthTarget();
       if (target) {
         finishAuthRedirect(target);
@@ -107,7 +107,7 @@ export default function App() {
       setSession(newSession);
       if (event === "SIGNED_IN" && newSession) {
         const email = newSession.user?.email?.toLowerCase();
-        const defaultTarget = email === "mdsharifmolla354@gmail.com" ? "admin" : "dashboard";
+        const defaultTarget = isSuperAdminEmail(email) ? "admin" : "dashboard";
         finishAuthRedirect(getAuthTarget() || defaultTarget);
       }
     });
@@ -117,7 +117,7 @@ export default function App() {
 
   useEffect(() => {
     // For super admin, route #/dashboard directly to #/admin so the editable sections are always accessible
-    if (page === "dashboard" && session?.user?.email?.toLowerCase() === "mdsharifmolla354@gmail.com") {
+    if (page === "dashboard" && isSuperAdminEmail(session?.user?.email)) {
       setPage("admin");
       setActiveSection("#/admin");
       window.history.replaceState(null, "", window.location.pathname + "#/admin");

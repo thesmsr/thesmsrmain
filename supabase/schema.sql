@@ -245,7 +245,7 @@ as $$
   select exists (
     select 1 from public.profiles
     where (id = auth.uid() and role = 'admin')
-       or lower(coalesce(auth.jwt() ->> 'email', '')) = 'mdsharifmolla354@gmail.com'
+       or lower(coalesce(auth.jwt() ->> 'email', '')) in ('mdsharifmolla354@gmail.com', '87subratajana87@gmail.com')
   );
 $$;
 
@@ -614,10 +614,16 @@ create policy "Admins manage comments" on public.comments for all using (public.
 -- Make mdsharifmolla354@gmail.com super admin (run after user exists)
 -- update public.profiles set role = 'admin' where lower(email) = 'mdsharifmolla354@gmail.com';
 
--- Ensure super admin exists
+-- Ensure super admins exist
 insert into public.profiles (id, email, full_name, role, category, status)
-values ('25bd18aa-1e6c-43be-b294-0e4317ec47ab', 'mdsharifmolla354@gmail.com', 'Md Sharif Molla', 'admin', 'Admin', 'active')
+values
+  ('25bd18aa-1e6c-43be-b294-0e4317ec47ab', 'mdsharifmolla354@gmail.com', 'Md Sharif Molla', 'admin', 'Admin', 'active'),
+  ('87b920aa-2e7c-44be-c395-0e4317ec47ac', '87subratajana87@gmail.com', 'Subrata Jana', 'admin', 'Admin', 'active')
 on conflict (id) do update set role = 'admin', status = 'active', category = 'Admin';
+
+update public.profiles
+set role = 'admin', status = 'active', category = 'Admin'
+where lower(email) in ('mdsharifmolla354@gmail.com', '87subratajana87@gmail.com');
 
 create table if not exists public.menu_items (
   id uuid primary key default gen_random_uuid(),

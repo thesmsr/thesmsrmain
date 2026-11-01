@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase, isSuperAdminEmail } from "../lib/supabase";
 import { getAuthErrorMessage, verifyEmailOtp } from "../lib/authMessages";
 
 const h = React.createElement;
@@ -1739,7 +1739,7 @@ export default function AdminPage() {
     }
     const loadProfile = async () => {
       const email = session.user.email?.toLowerCase();
-      if (email === "mdsharifmolla354@gmail.com") {
+      if (isSuperAdminEmail(email)) {
         if (mounted) setProfile({ role: "admin", full_name: session.user.user_metadata?.full_name || "Super Admin" });
         return;
       }

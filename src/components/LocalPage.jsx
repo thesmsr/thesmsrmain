@@ -4,7 +4,7 @@ import JoinSection from "./JoinSection";
 import GallerySection from "./GallerySection";
 import ReviewsSection from "./ReviewsSection";
 import ServicePage from "./ServicePage";
-import { supabase } from "../lib/supabase";
+import { supabase, isSuperAdminEmail } from "../lib/supabase";
 import { getAuthErrorMessage, verifyEmailOtp } from "../lib/authMessages";
 
 const h = React.createElement;
@@ -198,7 +198,7 @@ function LoginPage({ session }) {
   const signInWithGoogle = async () => {
     if (!supabase) return setStatus("Supabase is not configured.");
     setBusy(true);
-    const target = (selected === "Admin" || email.trim().toLowerCase() === "mdsharifmolla354@gmail.com") ? "admin" : "dashboard";
+    const target = (selected === "Admin" || isSuperAdminEmail(email)) ? "admin" : "dashboard";
     localStorage.setItem("smsr_auth_target", target);
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
@@ -248,7 +248,7 @@ function LoginPage({ session }) {
     }
     setStatus("Login successful!");
     setBusy(false);
-    const dest = (selected === "Admin" || cleanEmail === "mdsharifmolla354@gmail.com") ? "#/admin" : "#/dashboard";
+    const dest = (selected === "Admin" || isSuperAdminEmail(cleanEmail)) ? "#/admin" : "#/dashboard";
     window.location.hash = dest;
   };
   return h("div", { className: "page-view section-page login-page" },
@@ -540,7 +540,7 @@ function AccountPage({ cms = {}, session: appSession }) {
       ]
     }
   };
-  const isAdmin = user?.email?.toLowerCase() === "mdsharifmolla354@gmail.com" || profile?.role === "admin";
+  const isAdmin = isSuperAdminEmail(user?.email) || profile?.role === "admin";
   const dashboard = dashboardByCategory[profile?.category] || dashboardByCategory.Member;
   const dashboardSlug = `${(profile?.category || "Member").toLowerCase()}-dashboard`;
   const configuredCards = cms.pageSections?.filter(section => section.page_slug === dashboardSlug) || [];

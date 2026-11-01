@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase, isSuperAdminEmail } from "../lib/supabase";
 
 const h = React.createElement;
 
@@ -14,7 +14,7 @@ export default function Header({ open, setOpen, activeSection, onSelectSection, 
     load();
   }, []);
 
-  const isAdmin = session?.user?.email?.toLowerCase() === "mdsharifmolla354@gmail.com";
+  const isAdmin = isSuperAdminEmail(session?.user?.email);
 
   const defaultNavItems = [
     { href: "#/home", label: "Home" },
