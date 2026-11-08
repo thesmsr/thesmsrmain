@@ -269,7 +269,8 @@ section{padding:clamp(56px,9vw,104px) 0}
 .join-section .head p,.join-card p{color:var(--muted)}
 .join-section .eyebrow{color:var(--accent)}
 .join-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.join-card{padding:clamp(24px,4vw,42px);border:1px solid var(--line);border-radius:20px;background:var(--surface)}
+.join-card{padding:clamp(24px,4vw,42px);border:1px solid var(--line);border-radius:20px;background:var(--surface);transition:border-color .28s ease,box-shadow .28s ease,transform .22s ease}
+.join-card:hover{border-color:color-mix(in srgb,var(--accent) 38%,var(--line));box-shadow:0 14px 30px -14px rgba(16,34,110,.2);transform:translateY(-3px)}
 .join-card.featured{background:#E5EBFF;border-color:var(--accent)}
 .join-number{display:block;color:var(--accent);font:700 2rem/1 "Bricolage Grotesque",sans-serif;margin-bottom:32px}
 .join-card h3{font-size:1.7rem;margin:0 0 10px}

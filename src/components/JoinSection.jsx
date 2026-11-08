@@ -20,9 +20,14 @@ export default function JoinSection({ sections, session }) {
       h("p", null, intro.body)) : !hasCmsSections && h("div", { className: "head" }, h("p", { className: "eyebrow" }, "Join the trust"), h("h2", null, "Choose how you want to take part"),
       h("p", null, "Students, academic staff, graduates and supporters can all find a place in the SMSR community.")),
     h("div", { className: "join-grid" },
-      cards.map((card, index) => h("article", { className: "join-card" + (index === 1 ? " featured" : ""), key: card.section_key || index },
+      cards.map((card, index) => h("article", { className: "join-card" + (card.featured ? " featured" : ""), key: card.section_key || index },
         h("span", { className: "join-number" }, "0" + (index + 1)), h("h3", null, card.title),
-        h("p", null, card.body), card.link_url && h("a", { className: "btn", href: card.link_url }, card.link_label || "Learn more")))
+        h("p", null, card.body), card.link_url && h("a", {
+          className: "btn alt",
+          href: card.link_url,
+          target: card.link_url.startsWith("http") ? "_blank" : undefined,
+          rel: card.link_url.startsWith("http") ? "noopener noreferrer" : undefined
+        }, card.link_label || "Learn more")))
     )
   ));
 }
