@@ -2,8 +2,23 @@ import React from "react";
 
 const h = React.createElement;
 
-export default function ServiceIcon3D({ index, size = 32 }) {
-  switch (index) {
+export default function ServiceIcon3D({ index, slug = "", title = "", size = 32 }) {
+  const norm = `${slug} ${title}`.toLowerCase();
+  let iconCase = index;
+  if (norm.includes("award")) iconCase = 6;
+  else if (norm.includes("merit") || norm.includes("scholarship")) iconCase = 3;
+  else if (norm.includes("journal")) iconCase = 0;
+  else if (norm.includes("book")) iconCase = 1;
+  else if (norm.includes("conference")) iconCase = 2;
+  else if (norm.includes("faculty")) iconCase = 7;
+  else if (norm.includes("seminar") || norm.includes("webinar")) iconCase = 11;
+  else if (norm.includes("gate") || norm.includes("pass")) iconCase = 9;
+  else if (norm.includes("mock")) iconCase = 10;
+  else if (norm.includes("intelligence")) iconCase = 5;
+  else if (norm.includes("guidance")) iconCase = 4;
+  else if (norm.includes("collab")) iconCase = 8;
+
+  switch (iconCase) {
     case 0:
       // Research journal: 3D open book / journal with ribbon
       return h("svg", { width: size, height: size, viewBox: "0 0 48 48", fill: "none", "aria-hidden": "true" },

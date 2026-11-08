@@ -394,19 +394,22 @@ create policy "Admins manage site settings" on public.site_settings for all usin
 
 insert into public.services (slug, title, summary, sort_order)
 values
-  ('research-journal', 'Research journal', 'Publish your original research in our journal.', 1),
-  ('book-publication', 'Book publication', 'Take a manuscript all the way to a printed book.', 2),
-  ('conference_workshop', 'Conference & workshop', 'Host or attend academic events and meet your peers.', 3),
-  ('faculty_development_programme', 'Faculty development', 'Practical programmes that strengthen teaching.', 4),
-  ('research_guidance', 'Research guidance', 'One-to-one mentoring for your research project.', 5),
-  ('intelligence_test', 'Intelligence test', 'A structured assessment of cognitive ability.', 6),
-  ('merit_scholarship', 'Merit scholarship', 'Support for talented students who cannot pay tuition fees.', 7),
-  ('coaching_institute', 'Coaching institute', 'Personal coaching for learners at every level.', 8),
-  ('career-counseling', 'Career counselling', 'Clear, tailored guidance for career decisions.', 9),
-  ('teachers_bureau', 'Teachers bureau', 'A free service connecting teachers with opportunities.', 10),
-  ('mock_test', 'Mock test', 'Practise under exam conditions before the real thing.', 11),
-  ('training_placement', 'Training & placement', 'Industry-focused training with placement support.', 12)
-on conflict (slug) do nothing;
+  ('award', 'Award', 'Recognising excellence in education, research and academic leadership.', 1),
+  ('merit_scholarship', 'Merit Scholarship', 'Support for talented students who can’t pay tuition fees.', 2),
+  ('research-journal', 'Research Journals', 'Publish original peer-reviewed research across scientific disciplines.', 3),
+  ('book-publication', 'Book Publication', 'Take a manuscript all the way to a published book with ISBN.', 4),
+  ('conference_workshop', 'Conferences', 'Host or attend academic conferences and meet global peers.', 5),
+  ('faculty_development_programme', 'Faculty Development Program', 'Practical programmes that strengthen pedagogy and research.', 6),
+  ('seminar_webinar', 'Seminar & Webinar', 'Interactive virtual and in-person sessions with leading experts.', 7),
+  ('gatepass', 'GATEpass', 'Gateway access to academic resources, exams and institutional opportunities.', 8),
+  ('mock_test', 'Mock Test', 'Practise under exam conditions before the real thing.', 9),
+  ('intelligence_test', 'Intelligence Test', 'A structured assessment of cognitive ability and learning style.', 10),
+  ('research_guidance', 'Research Guidance', 'One-to-one mentoring for your research project from start to finish.', 11),
+  ('research_collaboration', 'Research Collaboration', 'Cross-institutional partnerships and collaborative academic initiatives.', 12)
+on conflict (slug) do update set
+  title = excluded.title,
+  summary = excluded.summary,
+  sort_order = excluded.sort_order;
 
 insert into public.site_content (slug, title, eyebrow, body)
 values

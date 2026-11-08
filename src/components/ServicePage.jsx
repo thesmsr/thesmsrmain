@@ -3,8 +3,44 @@ import React from "react";
 const h = React.createElement;
 
 const details = {
+  "award": {
+    title: "Award",
+    intro: "Honouring and celebrating exceptional achievements in mathematics, research, teaching and academic leadership.",
+    sections: [
+      ["Recognising excellence", "SMSR awards celebrate researchers, educators and students who demonstrate outstanding commitment, innovation and impact."],
+      ["Annual honours & commendations", "Awards are presented during conferences, seminars and trust celebrations to inspire scholarly leadership."],
+      ["Nominations & eligibility", "Open to researchers, faculty members, young scholars and educational institutions committed to academic advancement."]
+    ]
+  },
+  "seminar_webinar": {
+    title: "Seminar & Webinar",
+    intro: "Interactive in-person and virtual symposiums connecting scholars, researchers and students with global experts.",
+    sections: [
+      ["Engaging presentations", "Sessions focus on emerging mathematical theories, computational research, pedagogical methods and interdisciplinary studies."],
+      ["Global access & collaboration", "Virtual webinars allow students and faculty across regions to participate, ask questions and collaborate freely."],
+      ["Certificate of participation", "Attendees receive official recognition and networking opportunities with keynote speakers and academic peers."]
+    ]
+  },
+  "gatepass": {
+    title: "GATEpass",
+    intro: "A dedicated academic gateway providing access to tests, learning resources, guidance and exam pathways.",
+    sections: [
+      ["Comprehensive examination access", "GATEpass supports learners preparing for national-level competitive assessments, entrance tests and higher study."],
+      ["Study materials & mock evaluation", "Access curated question banks, structured test series and mentor feedback designed to build exam readiness."],
+      ["Pathway to scholarship", "Top performers through GATEpass can qualify for merit scholarships, research fellowships and workshop invitations."]
+    ]
+  },
+  "research_collaboration": {
+    title: "Research Collaboration",
+    intro: "Fostering inter-institutional partnerships, joint research initiatives and interdisciplinary scholarship.",
+    sections: [
+      ["Cross-institutional partnerships", "Connecting researchers from universities, institutes and industry to tackle complex mathematical and scientific challenges."],
+      ["Joint publications & grants", "Facilitating co-authored papers in peer-reviewed journals, collaborative grant applications and book projects."],
+      ["Academic exchange network", "Enabling faculty and scholar exchange programmes, shared lab resources and joint conference hosting."]
+    ]
+  },
   "research-journal": {
-    title: "Research Journal",
+    title: "Research Journals",
     intro: "Publish original research and share valuable academic work with a wider learning community.",
     sections: [["A place for scholarship", "Our journal service is designed for researchers who want to present focused, original work with a clear academic structure."], ["What we support", "Manuscript preparation, editorial coordination and a considered route from research idea to publication."], ["Who it is for", "Students, scholars, faculty members and independent researchers preparing a paper for publication."]]
   },
@@ -14,12 +50,12 @@ const details = {
     sections: [["Textbook publication", "We support educators and subject experts with editing, formatting and distribution for books intended for classrooms and wider academic use."], ["Edited and author books", "Articles, novels, memoirs and non-fiction manuscripts can be shaped into a cohesive edited volume or a finished author publication."], ["From manuscript to reader", "The service supports evaluation, editing, cover design and the practical steps needed to bring a book to life."]]
   },
   "conference_workshop": {
-    title: "Conference & Workshop",
+    title: "Conferences",
     intro: "Learn with expert speakers, thought leaders and practitioners through collaborative academic events.",
     sections: [["Practical learning", "Workshops cover technology, business, healthcare, education and more through hands-on sessions, discussions and panels."], ["Conferences that connect", "Conferences bring together academia, industry and government through keynote talks, papers, posters, networking and publications."], ["Collaborate with us", "Students, educators, researchers, institutes, colleges and universities are welcome to collaborate on future events."]]
   },
   "faculty_development_programme": {
-    title: "Faculty Development Programme",
+    title: "Faculty Development Program",
     intro: "Grow teaching, research and leadership skills through flexible professional development for faculty members.",
     sections: [["Teaching and learning", "Explore innovative teaching methods, effective assessment and practical ways to improve student engagement."], ["Research and technology", "Develop research skills, discover funding opportunities and use learning management, digital content and collaboration tools effectively."], ["Professional growth", "Flexible in-person and virtual sessions, mentoring and coaching help faculty members build a confident academic practice."]]
   },

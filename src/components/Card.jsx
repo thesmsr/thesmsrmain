@@ -41,7 +41,7 @@ export default function Card({ i, s, isActive, onSelect }) {
     h("div", { className: "service-card-inner" },
       h("div", { className: "service-card-face service-card-front" },
         h("div", { className: "service-icon-wrap" },
-          s[3] ? h("img", { src: s[3], alt: s[0], style: { width: "100%", height: "100%", objectFit: "contain", borderRadius: "10px" } }) : h(ServiceIcon3D, { index: i, size: 48 })
+          s[3] ? h("img", { src: s[3], alt: s[0], style: { width: "100%", height: "100%", objectFit: "contain", borderRadius: "10px" } }) : h(ServiceIcon3D, { index: i, slug: s[2] ? s[2].replace(/\.html$/, "") : "", title: s[0], size: 48 })
         ),
         h("h3", null, s[0])
       ),

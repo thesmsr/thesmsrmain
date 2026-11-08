@@ -1,18 +1,18 @@
 export const SITE = "https://www.knowledgereview.org/";
 
 export const services = [
-  ["Research journal", "Publish your original research in our journal.", "research-journal.html"],
-  ["Book publication", "Take a manuscript all the way to a printed book.", "book-publication.html"],
-  ["Conference & workshop", "Host or attend academic events and meet your peers.", "conference_workshop.html"],
-  ["Faculty development", "Practical programmes that strengthen teaching.", "faculty_development_programme.html"],
-  ["Research guidance", "One-to-one mentoring for your research project.", "research_guidance.html"],
-  ["Intelligence test", "A structured assessment of cognitive ability.", "intelligence_test.html"],
-  ["Merit scholarship", "Support for talented students who can’t pay tuition fees.", "merit_scholarship.html"],
-  ["Coaching institute", "Personal coaching for learners at every level.", "coaching_institute.html"],
-  ["Career counselling", "Clear, tailored guidance for career decisions.", "career-counseling.html"],
-  ["Teachers’ bureau", "A free service connecting teachers with opportunities.", "teachers_bureau.html"],
-  ["Mock test", "Practise under exam conditions before the real thing.", "mock_test.html"],
-  ["Training & placement", "Industry-focused training with placement support.", "training_placement.html"]
+  ["Award", "Recognising excellence in education, research and academic leadership.", "award.html"],
+  ["Merit Scholarship", "Support for talented students who can’t pay tuition fees.", "merit_scholarship.html"],
+  ["Research Journals", "Publish original peer-reviewed research across scientific disciplines.", "research-journal.html"],
+  ["Book Publication", "Take a manuscript all the way to a published book with ISBN.", "book-publication.html"],
+  ["Conferences", "Host or attend academic conferences and meet global peers.", "conference_workshop.html"],
+  ["Faculty Development Program", "Practical programmes that strengthen pedagogy and research.", "faculty_development_programme.html"],
+  ["Seminar & Webinar", "Interactive virtual and in-person sessions with leading experts.", "seminar_webinar.html"],
+  ["GATEpass", "Gateway access to academic resources, exams and institutional opportunities.", "gatepass.html"],
+  ["Mock Test", "Practise under exam conditions before the real thing.", "mock_test.html"],
+  ["Intelligence Test", "A structured assessment of cognitive ability and learning style.", "intelligence_test.html"],
+  ["Research Guidance", "One-to-one mentoring for your research project from start to finish.", "research_guidance.html"],
+  ["Research Collaboration", "Cross-institutional partnerships and collaborative academic initiatives.", "research_collaboration.html"]
 ];
 
 export const people = [
