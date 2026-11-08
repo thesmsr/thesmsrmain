@@ -16,7 +16,7 @@ export default function HomeSection({ content, sections, session }) {
       h("p", { className: "eyebrow" }, content?.eyebrow || "A public charitable trust"),
       h("h1", null, content?.title || "Education shouldn’t depend on who can pay for it."),
       h("p", null, content?.body || "Since 2008, SMSR has supported students, teachers and researchers, reaching more than 1,700 students."),
-      h("div", { className: "row" }, displayCtas.map((cta, index) => cta.link_url && h("a", { className: "btn" + (index ? " alt" : ""), href: cta.link_url, key: cta.section_key || index }, cta.link_label || "Learn more")))
+      h("div", { className: "row" }, displayCtas.map((cta, index) => cta.link_url && h("a", { className: "btn alt" + (index === 0 ? " primary" : ""), href: cta.link_url, key: cta.section_key || index }, cta.link_label || "Learn more")))
     ),
     content?.image_url
       ? h("div", { className: "logo-stage" }, h("img", { src: content.image_url, alt: content?.title || "SMSR", style: { maxWidth: "90%", maxHeight: "420px", objectFit: "contain", borderRadius: "16px", filter: "drop-shadow(0 20px 25px rgba(16,34,110,.2))" } }))

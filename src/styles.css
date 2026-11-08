@@ -26,12 +26,16 @@ nav{display:flex;gap:clamp(4px,0.55vw,8px);align-items:center}
 .nav-pill.active span{color:var(--accent-ink)}
 .nav-pill.active::before{transform:scaleX(1);transform-origin:left center;background:var(--accent)}
 .menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 14px;font:inherit}
-.btn{display:inline-block;padding:13px 24px;border-radius:999px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;border:1px solid var(--accent);transition:transform .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.alt{position:relative;overflow:hidden;isolation:isolate;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);transition:color .32s cubic-bezier(.2,.8,.2,1),border-color .32s ease,box-shadow .32s ease,transform .2s ease}
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-block;padding:13px 24px;border-radius:999px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;border:1.5px solid var(--accent);box-shadow:0 4px 14px rgba(16,34,110,.2);transition:color .32s cubic-bezier(.2,.8,.2,1),border-color .32s ease,box-shadow .32s ease,transform .2s ease}
+.btn::before{content:"";position:absolute;inset:-1px;background:color-mix(in srgb,var(--accent) 78%,#000);border-radius:inherit;z-index:-1;transform:scaleX(0);transform-origin:right center;transition:transform .4s cubic-bezier(.25,1,.4,1)}
+.btn:hover::before{transform:scaleX(1);transform-origin:left center}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,34,110,.32)}
+.btn.alt{position:relative;overflow:hidden;isolation:isolate;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);box-shadow:none;transition:color .32s cubic-bezier(.2,.8,.2,1),border-color .32s ease,box-shadow .32s ease,transform .2s ease}
 .btn.alt::before{content:"";position:absolute;inset:-1px;background:var(--accent);border-radius:inherit;z-index:-1;transform:scaleX(0);transform-origin:right center;transition:transform .4s cubic-bezier(.25,1,.4,1)}
 .btn.alt:hover::before{transform:scaleX(1);transform-origin:left center}
 .btn.alt:hover{color:var(--accent-ink);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,34,110,.22)}
+.btn.alt.primary{border-color:var(--accent);color:var(--accent);font-weight:700}
+.btn.alt.primary:hover{color:var(--accent-ink);border-color:var(--accent);box-shadow:0 6px 20px rgba(16,34,110,.3)}
 .home-section{padding:0;min-height:calc(100svh - 68px);min-height:calc(100dvh - 68px);display:flex;flex-direction:column;justify-content:center}
 .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;padding:clamp(24px,4vh,44px) 0;width:100%}
 .copy{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
@@ -361,7 +365,7 @@ nav.open{display:flex}
 .otp-row{grid-template-columns:1fr}.otp-row .btn{width:100%}
 .admin-header{flex-direction:column}.admin-tabs{border-radius:10px}
 }
-@media (prefers-reduced-motion:reduce){.copy,.logo-crest,.logo-stage::before,.scroll-reveal,.scroll-reveal.is-visible .join-card,.scroll-reveal.is-visible .gallery-item,.scroll-reveal.is-visible .person,.nav-pill::before,.btn.alt::before,.login-options .login-option,.login-option::before,.login-selected,.login-back,.login-back::before,.login-continue::before,.login-submit,.login-submit::before{animation:none;transition:none}.scroll-reveal{opacity:1;filter:none;transform:none}.logo-word{opacity:1;filter:none;transform:none;animation:none}html{scroll-behavior:auto}.card,.service-card,.service-card-inner,.btn,.btn.alt,.nav-pill{transition:none}}
+@media (prefers-reduced-motion:reduce){.copy,.logo-crest,.logo-stage::before,.scroll-reveal,.scroll-reveal.is-visible .join-card,.scroll-reveal.is-visible .gallery-item,.scroll-reveal.is-visible .person,.nav-pill::before,.btn::before,.btn.alt::before,.login-options .login-option,.login-option::before,.login-selected,.login-back,.login-back::before,.login-continue::before,.login-submit,.login-submit::before{animation:none;transition:none}.scroll-reveal{opacity:1;filter:none;transform:none}.logo-word{opacity:1;filter:none;transform:none;animation:none}html{scroll-behavior:auto}.card,.service-card,.service-card-inner,.btn,.btn.alt,.nav-pill{transition:none}}
 
 .admin-wrap-modern{max-width:1400px}
 .admin-header-modern{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;padding:24px 28px;background:linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--accent) 6%,var(--surface)));border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 60px -40px rgba(16,34,110,.6)}
